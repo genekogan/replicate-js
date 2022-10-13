@@ -65,7 +65,7 @@ export class Replicate {
       url: "/predictions",
       method: "post",
       event: "startPrediction",
-      body: { version: modelVersion, input: input, webhook_completed: webhookCompleted },
+      body: { version: modelVersion, input: input, webhook_completed: webhookCompleted, webhook: webhookCompleted },
     });
   }
 
