@@ -35,12 +35,12 @@ export class Replicate {
             event: "getPrediction",
         });
     }
-    async startPrediction(modelVersion, input, webhookCompleted=null) {
+    async startPrediction(modelVersion, input, webhook=null, webhook_events_filter=null) {
         return await this.callHttpClient({
             url: "/predictions",
             method: "post",
             event: "startPrediction",
-            body: { version: modelVersion, input: input, webhook_completed: webhookCompleted, webhook: webhookCompleted },
+            body: { version: modelVersion, input: input, webhook: webhook, webhook_events_filter: webhook_events_filter },
         });
     }
     async callHttpClient({ url, method, event, body }) {
