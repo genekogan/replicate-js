@@ -17,7 +17,7 @@ export declare class Replicate {
     constructor({ token, proxyUrl, httpClient, pollingInterval }?: ReplicateInputProps);
     getModel(path: string): Promise<any>;
     getPrediction(id: string): Promise<any>;
-    startPrediction(modelVersion: string, input: PredictionInput): Promise<any>;
+    startPrediction(modelVersion: string, input: PredictionInput, webhook: string, webhook_events_filter: string[]): Promise<any>;
     protected callHttpClient({ url, method, event, body }: HTTPClientRequest): Promise<any>;
 }
 export interface ModelInputProps {
